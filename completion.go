@@ -64,7 +64,7 @@ func (c *Client) CreateCompletion(ctx context.Context, engineID string, request 
 		return
 	}
 
-	urlSuffix := fmt.Sprintf("/engines/%s/completions", engineID)
+	urlSuffix := "/completions" // fmt.Sprintf("/engines/%s/completions", engineID)
 	req, err := http.NewRequest("POST", c.fullURL(urlSuffix), bytes.NewBuffer(reqBytes))
 	if err != nil {
 		return
